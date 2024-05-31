@@ -1,15 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-:root{
-    --bg-color-1:#ffff;
+:root {
+    --bg-color-1: #ffff;
+    --bg-color-2: #f0f0f0;
     --red-elements: #E60023;
     --black-elements: #111111;
     --icon-color-1: #767676;
-    --icon-color2:#111111;
-    --text-color: #FFFFFF;
+    --icon-color2: #111111;
+    --text-color: #000000;
 
-    --box-border: border-radius:10%;
-    
+    --dark-bg-color-1: #121212;
+    --dark-bg-color-2: #1e1e1e;
+    --dark-text-color: #ffffff;
+    --dark-icon-color: #b3b3b3;
+    --dark-red-elements: #ff5252;
 }
 
 * {
@@ -17,7 +21,6 @@
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
-    transition: background-color 0.3s, color 0.3s;
     scroll-behavior: smooth;
     font-family: 'Roboto', sans-serif;
     transition: background-color 0.3s, color 0.3s;
@@ -44,8 +47,6 @@ header .logo {
     position: relative;
     color: var(--red-elements);
     margin: 0;
-   
-    
 }
 
 .logo i {
@@ -64,7 +65,6 @@ header .logo {
     justify-content: space-between;
     align-items: center;
     position: relative;
-    /* margin-right: 1rem; */
 }
 
 .nav-bar a {
@@ -74,7 +74,6 @@ header .logo {
     margin-left: 1rem;
     padding: .8rem;
     border-radius: 25%;
-    
 }
 
 .nav-bar a:hover,
@@ -101,7 +100,6 @@ input[type="search"] {
     border: 1px solid #ccc;
     border-radius: 4px;
     width: 100%;
-
 }
 
 .dropdown {
@@ -111,7 +109,7 @@ input[type="search"] {
 }
 
 .dropbtn {
-   background: url(./img/bx-log-in.svg) no-repeat center;
+    background: url(./img/bx-log-in.svg) no-repeat center;
     color: var(--icon-color2);
     padding: 10px;
     border: none;
@@ -119,17 +117,17 @@ input[type="search"] {
     font-size: 16px;
 }
 
-.dropbtn:active{
+.dropbtn:active {
     transform: scale(.9);
 }
 
 .dropdown-content {
     display: none;
     position: absolute;
-     right: 0;
+    right: 0;
     background-color: var(--bg-color-1);
     min-width: 200px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
     padding: 12px 16px;
 }
@@ -161,78 +159,127 @@ input[type="search"] {
     margin-left: 20px;
 }
 
-#dark-mode-toggle:hover{
+#dark-mode-toggle:hover {
     transform: scale(.9);
 }
 
-main{
-    padding-top: 40px;
+main {
+    padding-top: 60px;
 }
 
 .home {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(236px, 1fr));
     gap: 20px;
     padding: 20px;
 }
 
 .cart-box {
-    background-color: var(--bg-color-1);
+    background-color: var(--bg-color-2);
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    
+    min-height: 236px;
+    min-width: 236px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: transform 0.3s;
 }
 
+.cart-box:hover {
+    transform: scale(1.05);
+}
 
-.cart{
+.cart {
+    width: 100%;
+    height: 100%;
     position: relative;
     border-radius: 8px;
     overflow: hidden;
 }
 
 .cart img {
-    border-radius: 8px;
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
     display: block;
 }
-.accion-1{
-    color: var(--text-color);
+
+.accion-1 {
+    color: var(--dark-text-color);
     padding: 3%;
-    border-radius: 30%;
-    background: var(--red-elements);
     border-radius: 10px;
+    background: var(--red-elements);
     position: absolute;
-    inset-block-start: 20px ;
+    inset-block-start: 20px;
     inset-inline-end: 20px;
 }
 
-.accion-container{
+.accion-container {
     display: flex;
     gap: 1rem;
     position: absolute;
     inset-inline-end: 30px;
-    inset-block-end: 20px ;
+    inset-block-end: 20px;
 }
 
-.accion-container a{
+.accion-container a {
     padding: 10%;
     font-size: 2rem;
     background: var(--bg-color-1);
     border-radius: 50%;
 }
 
-.overlay{
+.overlay {
     background: #00000071;
-    position: absolute; 
+    position: absolute;
     inset: 0;
     opacity: 0;
     transition: .3s opacity;
-    
+}
+
+.cart:hover .overlay {
+    opacity: 1;
 }
 
 
-.cart:hover .overlay{
-    opacity: 1;
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .nav-bar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-bar a {
+        margin: 5px 0;
+    }
+
+    .home {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .cart-box {
+        min-height: 200px;
+        min-width: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    html {
+        font-size: 50%;
+    }
+
+    .cart-box {
+        min-height: 180px;
+        min-width: 180px;
+    }
 }
