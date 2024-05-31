@@ -123,6 +123,19 @@ html{
     break-inside: avoid;
 }
 
+.hidden {
+    opacity: 0;
+    filter: blur(0);
+    transform: translateY(-50%);
+    transition: all 2s;
+}
+
+.show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+}
+
 .home .cart-box img{
     max-width: 100%;
     border-radius: 15px;
