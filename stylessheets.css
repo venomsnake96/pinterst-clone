@@ -30,7 +30,7 @@ html {
 }
 
 .logo {
-    flex: .2;
+    flex: .5;
     color: #F44336;
     text-align: center;
 }
@@ -92,16 +92,17 @@ html {
 }
 
 .log-in {
-    padding-top: .2rem;
+    display: flex;
+    justify-content: center;
+    /* padding-top: .2rem; */
     flex: .3;
     position: relative;
-    text-align: center;
+    gap: 8px;
+
 }
 
 .log-in a {
-    font-size: 1.5rem;
-    margin-left: 1rem;
-    cursor: pointer;
+   font-size: 1.2rem;
 }
 
 
@@ -251,7 +252,7 @@ html {
 }
 
 .cart-box-video:hover .overlay-video{
-    background: #00000057;
+    background: #00000083;
     opacity: 1;
     border-radius: 15px;
 }
