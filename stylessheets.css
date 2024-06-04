@@ -215,6 +215,7 @@ html {
     position: absolute;
     inset-inline-end: 1rem;
     inset-block-start: 1rem;
+    z-index: 1;
 }
 
 .cart-box-video .controls-container{
