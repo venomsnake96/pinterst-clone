@@ -20,13 +20,17 @@ html {
 
 .header {
     width: 100%;
-    padding: 10px 20px;
+    padding: 10px ;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: sticky;
+    background-color: var(--bg-color);
+    
 
+}
 
+ .rps-navbar{
+    display: none;
 }
 
 .logo {
@@ -43,7 +47,7 @@ html {
     position: relative;
     flex: 1;
     text-align: center;
-
+    
 }
 
 .nav-bar a {
@@ -112,7 +116,7 @@ html {
     margin: 20px 0;
     columns: 4;
     column-gap: 10px;
-    padding: 0 2rem;
+    padding: 4rem 2rem;
 
 
 }
@@ -259,5 +263,62 @@ html {
 
 
 @media (max-width:1200px) {
-
+.home{
+    width: calc(100% - 40px);
+    columns:3 ;
 }
+}
+
+@media (max-width:900px){
+    .header .nav-bar a{
+        margin-left: 0;
+    }
+}
+
+@media (max-width:760px){
+    .header{
+        position: fixed;
+        bottom: 0;
+        z-index: 1;
+    }
+
+    .logo{
+        display: none;
+    }
+
+    .nav-bar{
+        display: none;
+    }
+
+    .input-container{
+        display: none;
+    }
+    .log-in{
+        display: none;
+    }
+
+    .header .rps-navbar{
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        font-size: 2rem;
+        color: var(--black-element);
+    }
+    .rps-navbar a{
+        color: var(--black-element);
+        font-size: 2rem;
+    }
+
+    .home{
+        padding: 0 2rem 4rem;
+        columns: 2;
+    }
+}
+
+@media (max-width:480px) {
+    .home{
+     
+        columns:1 ;
+    }
+    }
