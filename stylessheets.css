@@ -112,12 +112,12 @@ html {
 
 
 
-.home {
-    width: 100vw;
+.principal .home {
+    width: 100%;
     margin: 20px 0;
     columns: 4;
     column-gap: 10px;
-    padding: 4rem 2rem;
+    padding: 2rem 2rem;
 
 
 }
@@ -265,8 +265,8 @@ html {
 
 
 @media (max-width:1200px) {
-.home{
-    width: calc(100% - 40px);
+.principal .home{
+    width: 100%;
     columns:3 ;
 }
 }
@@ -312,14 +312,15 @@ html {
         font-size: 2rem;
     }
 
-    .home{
+    .principal .home{
+        width: 100%;
         padding: 0 2rem 4rem;
         columns: 2;
     }
 }
 
 @media (max-width:480px) {
-    .home{
+    .principal .home{
      
         columns:1 ;
     }
